@@ -1,5 +1,5 @@
 import os
-from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langchain.prompts import ChatPromptTemplate
 from pydantic import BaseModel
 from typing import Type, List, Optional
@@ -8,9 +8,9 @@ from langchain_core.messages import AIMessage
 
 from dexter.prompts import DEFAULT_SYSTEM_PROMPT
 
-# Initialize the OpenAI client
-# Make sure your OPENAI_API_KEY is set in your environment
-llm = ChatOpenAI(model="gpt-4o", temperature=0, api_key=os.getenv("OPENAI_API_KEY"))
+# Initialize the Anthropic client
+# Make sure your ANTHROPIC_API_KEY is set in your environment
+llm = ChatAnthropic(model="claude-sonnet-4-5-20250929", temperature=0, api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 def call_llm(
     prompt: str,
