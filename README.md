@@ -1,6 +1,17 @@
 # Dexter 🤖
 
+> **Note**: This is a fork of [virattt/dexter](https://github.com/virattt/dexter) with modifications to support Anthropic Claude API instead of OpenAI.
+
 An autonomous financial research agent that performs deep analysis using task planning, introspection, and real-time market data. Inspired by Claude Code, but built specifically for financial research.
+
+## 🔧 Changes in This Fork
+
+- **LLM Provider**: Migrated from OpenAI GPT-4 to Anthropic Claude Sonnet 4.5
+- **Dependencies**: Replaced `langchain-openai` with `langchain-anthropic`
+- **Model**: Now using `claude-sonnet-4-5-20250929` (the latest and most capable Claude model)
+- **API Key**: Updated environment configuration to use `ANTHROPIC_API_KEY` instead of `OPENAI_API_KEY`
+
+All core functionality remains unchanged - task planning, tool execution, and financial analysis work exactly the same way.
 <img width="979" height="651" alt="Screenshot 2025-10-14 at 6 12 35 PM" src="https://github.com/user-attachments/assets/5a2859d4-53cf-4638-998a-15cef3c98038" />
 
 ## Overview
@@ -22,7 +33,7 @@ Dexter breaks down complex financial queries into actionable tasks, executes the
 
 - Python 3.10 or higher
 - [uv](https://github.com/astral-sh/uv) package manager
-- OpenAI API key
+- **Anthropic API key** (get one at [console.anthropic.com](https://console.anthropic.com))
 - Financial Datasets API key (get one at [financialdatasets.ai](https://financialdatasets.ai))
 
 ### Installation
@@ -44,7 +55,7 @@ uv sync
 cp env.example .env
 
 # Edit .env and add your API keys
-# OPENAI_API_KEY=your-openai-api-key
+# ANTHROPIC_API_KEY=your-anthropic-api-key
 # FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key
 ```
 
